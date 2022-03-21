@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "345579813569",
+    "project_id": "fireapp-b5d32",
+    "storage_bucket": "fireapp-b5d32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345579813569:android:740cacaaca3396b7733240",
+        "android_client_info": {
+          "package_name": "br.infnet.dev.keeptask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345579813569-3i0sf920c98kkf913hnfmoe1n93d70ha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.infnet.dev.keeptask",
+            "certificate_hash": "904fc7005a4930ed4baa0fc2446e04eddcfd6003"
+          }
+        },
+        {
+          "client_id": "345579813569-jmalu4u3rsgp1ik3jmb4e5c435fqb8hp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABhOGdTPUfBM_vXL0EN7XpKvFMlKWvOOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345579813569-jmalu4u3rsgp1ik3jmb4e5c435fqb8hp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
