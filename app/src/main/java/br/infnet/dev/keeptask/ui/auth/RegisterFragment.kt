@@ -1,6 +1,7 @@
 package br.infnet.dev.keeptask.ui.auth
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentRegisterBinding
+import br.infnet.dev.keeptask.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -73,6 +75,7 @@ class RegisterFragment : Fragment() {
                 if (task.isSuccessful) {
                     findNavController().navigate(R.id.action_global_homeFragment)
                 } else {
+                    Toast.makeText(requireContext(), FirebaseHelper.validateError(task.exception?.message ?: ""), Toast.LENGTH_SHORT).show()
                     binding.progressBar.isVisible = false
                 }
             }

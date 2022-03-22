@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentRecoverAccountBinding
+import br.infnet.dev.keeptask.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -60,6 +61,8 @@ class RecoverAccountFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(), "Link para recuperação de conta enviado ao seu email.", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(requireContext(), FirebaseHelper.validateError(task.exception?.message ?: ""), Toast.LENGTH_SHORT).show()
                 }
 
                 binding.progressBar.isVisible = false

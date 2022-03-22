@@ -2,9 +2,7 @@
     <string name="app_name">KeepTask</string>
 
     <!--    Test String-->
-
     <string name="hello_blank_fragment">HELLO WORLD!!!!</string>
-
 
     <!--    Login Fragment-->
     <string name="text_email_login_email">E-mail</string>
@@ -26,6 +24,16 @@
     <string name="btn_send_email_text">Enviar email</string>
     <string name="task_carregando_tarefas_text">Carregando tarefas...</string>
     <string name="adicionar_tarefa_description">Adicionar tarefa</string>
+
+    <!--    Validation Errors - Auth-->
+    <string name="account_not_registered">Não foi encontrado nenhum cadastro com este e-mail</string>
+    <string name="invalid_email">Por favor, insira um e-mail válido</string>
+    <string name="invalid_password">Senha incorreta. Tente novamente.</string>
+    <string name="email_already_in_use">O e-mail informado já está cadastrado.</string>
+    <string name="weak_password">A senha informada é muito fraca. Insira uma com mais de 6 caracteres.</string>
+    <string name="generic_auth_error">Ocorreu um erro desconhecido. Tente novamente mais tarde</string>
+
+
 
 
 </resources>
