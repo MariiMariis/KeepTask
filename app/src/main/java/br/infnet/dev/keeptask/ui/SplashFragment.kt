@@ -10,11 +10,16 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,10 +33,17 @@ class SplashFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed(this::checkAuth, 3000)
+
     }
 
     private fun checkAuth() {
-        findNavController().navigate(R.id.loginFragment)
+        auth = Firebase.auth
+        if (auth.currentUser == null){
+            findNavController().navigate(R.id.action_splashFragment_to_authentication)
+        }else{
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+
+        }
 
     }
 
