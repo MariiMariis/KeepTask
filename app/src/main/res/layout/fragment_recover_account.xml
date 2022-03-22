@@ -24,7 +24,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recuperar conta"
+                    android:text="@string/toolbar_recover_account_text"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"/>
 
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="E-mail"
+                android:text="@string/text_recover_account"
                 android:textColor="@color/white" />
 
             <EditText
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit"
-                android:hint="email@email.com"
+                android:hint="@string/recover_account_email_hint"
                 android:inputType="textEmailAddress"
                 android:textColorHint="@color/hint_gray"
                 android:padding="14dp"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_button"
-                android:text="Enviar email"
+                android:text="@string/btn_send_email_text"
                 android:textAllCaps="true"
                 android:textColor="@color/bg_color"
                 app:backgroundTint="@null" />

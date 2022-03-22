@@ -39,7 +39,7 @@
                 android:layout_height="0dp"
                 android:background="@color/bg_color"
                 android:paddingHorizontal="8dp"
-                android:src="@drawable/ic_logout"
+                android:src="@drawable/ic_logout_svgrepo_com"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="E-mail"
+            android:text="@string/text_email_login_email"
             android:textColor="@color/white"/>
 
         <EditText
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edit"
-            android:hint="email@email.com"
+            android:hint="@string/text_email_login_email_hint"
             android:inputType="textEmailAddress"
             android:padding="14dp"
             android:textColor="@color/black"
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Senha"
+            android:text="@string/text_password_login_password"
             android:layout_marginTop="16dp"
             android:textColor="@color/white"/>
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edit"
-            android:hint="******"
+            android:hint="@string/text_password_login_password_hint"
             android:inputType="textPassword"
             android:padding="14dp"
             android:textColorHint="@color/hint_gray"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
             app:backgroundTint="@null"
-            android:text="Login"
+            android:text="@string/btn_login_screen"
             android:textAllCaps="true"
             android:textColor="@color/bg_color"
             android:layout_marginTop="16dp"/>
@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingVertical="8dp"
-                android:text="Criar conta"
+                android:text="@string/text_register_login_fragment"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingVertical="8dp"
-                android:text="Recuperar conta"
+                android:text="@string/text_recover_login_fragment"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

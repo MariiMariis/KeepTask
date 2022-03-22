@@ -1,5 +1,31 @@
 <resources>
     <string name="app_name">KeepTask</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Test String-->
+
+    <string name="hello_blank_fragment">HELLO WORLD!!!!</string>
+
+
+    <!--    Login Fragment-->
+    <string name="text_email_login_email">E-mail</string>
+    <string name="text_email_login_email_hint">email@email.com</string>
+    <string name="text_password_login_password">Senha</string>
+    <string name="text_password_login_password_hint">******</string>
+    <string name="btn_login_screen">Login</string>
+    <string name="text_register_login_fragment">Criar conta</string>
+    <string name="text_recover_login_fragment">Recuperar conta</string>
+
+    <!--    Register Fragment-->
+    <string name="btn_text_create_account">Criar conta</string>
+    <string name="toolbar_create_account_text">Criar conta</string>
+
+    <!--    Recover Account Fragment-->
+    <string name="toolbar_recover_account_text">Recuperar conta</string>
+    <string name="text_recover_account">"Insira o e-mail cadastrado "</string>
+    <string name="recover_account_email_hint">email@email.com</string>
+    <string name="btn_send_email_text">Enviar email</string>
+    <string name="task_carregando_tarefas_text">Carregando tarefas...</string>
+    <string name="adicionar_tarefa_description">Adicionar tarefa</string>
+
+
 </resources>
