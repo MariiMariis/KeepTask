@@ -2,7 +2,7 @@
 <resources>
     <color name="bg_color">#AA1FFF</color>
     <color name="hint_gray">#8C868F</color>
-
+    <color name="text_gray">#656167</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -11,4 +11,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="color_delete">#FF6455</color>
+    <color name="color_edit">#03B6FC</color>
+    <color name="color_detail">#04D5C1</color>
+
+    <color name="color_todo">#FF8F2D</color>
+    <color name="color_doing">#FFF979</color>
+    <color name="color_done">#0DE6B3</color>
+
+
 </resources>
