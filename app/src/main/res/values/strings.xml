@@ -33,7 +33,15 @@
     <string name="weak_password">A senha informada é muito fraca. Insira uma com mais de 6 caracteres.</string>
     <string name="generic_auth_error">Ocorreu um erro desconhecido. Tente novamente mais tarde</string>
 
-
+    <!--    Tasks-->
+    <string name="nova_tarefa">Nova Tarefa</string>
+    <string name="text_tarefa">Tarefa</string>
+    <string name="text_status">Status</string>
+    <string name="text_btn_salvar">Salvar</string>
+    <string name="text_insira_nova_tarefa">Insira aqui uma tarefa</string>
+    <string name="radio_btn_todo">A fazer</string>
+    <string name="radio_btn_doing">Fazendo</string>
+    <string name="radio_btn_done">Feito</string>
 
 
 </resources>

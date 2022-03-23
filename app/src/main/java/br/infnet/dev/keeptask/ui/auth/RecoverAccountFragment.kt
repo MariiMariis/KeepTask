@@ -60,7 +60,7 @@ class RecoverAccountFragment : Fragment() {
         auth.sendPasswordResetEmail(email)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(requireContext(), "Link para recuperação de conta enviado ao seu email.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Link para recuperação de conta enviado ao email informado.", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(requireContext(), FirebaseHelper.validateError(task.exception?.message ?: ""), Toast.LENGTH_SHORT).show()
                 }
