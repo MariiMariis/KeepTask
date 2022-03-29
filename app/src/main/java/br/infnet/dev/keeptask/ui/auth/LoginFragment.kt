@@ -50,6 +50,7 @@ class LoginFragment : Fragment() {
 
         binding.btnRecover.setOnClickListener {
             findNavController().navigate(R.id.recoverAccountFragment)
+
         }
     }
 

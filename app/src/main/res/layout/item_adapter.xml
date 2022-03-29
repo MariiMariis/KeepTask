@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_tarefas"
         android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
         android:layout_marginVertical="8dp"
         app:cardCornerRadius="10dp"
@@ -27,37 +27,95 @@
                 android:id="@+id/edit_nova_tarefa"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:ellipsize="end"
                 android:layout_margin="16dp"
-                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:textColor="@color/text_gray"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis lobortis ipsum. Fusce accumsan, leo in accumsan ultricies, odio enim vestibulum nulla, quis rutrum ligula lectus sit amet quam. " />
 
+            <TextView
+                android:id="@+id/remove_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_remover"
+                android:background="@drawable/bg_task"
+                android:backgroundTint="@color/color_delete"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
+                app:layout_constraintEnd_toStartOf="@+id/edit_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_btn" />
+
+            <TextView
+                android:id="@+id/edit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="24dp"
+                android:text="@string/btn_editar"
+                android:background="@drawable/bg_task"
+                android:backgroundTint="@color/color_edit"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/detalhes_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/remove_btn"
+                app:layout_constraintTop_toBottomOf="@+id/edit_nova_tarefa" />
+
+            <TextView
+                android:id="@+id/detalhes_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_detalhes"
+                android:background="@drawable/bg_task"
+                android:backgroundTint="@color/color_detail"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/edit_btn"
+                app:layout_constraintTop_toTopOf="@+id/edit_btn" />
+
             <ImageButton
                 android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginStart="16dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_baseline_arrow_back_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:tint="@color/bg_color"
-                android:layout_margin="8dp"/>
+                app:layout_constraintTop_toTopOf="@+id/edit_btn"
+                tools:tint="@color/bg_color" />
 
             <ImageButton
                 android:id="@+id/next_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_baseline_arrow_forward_24"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:tint="@color/bg_color"
-                android:layout_margin="8dp"/>
+                app:layout_constraintTop_toTopOf="@+id/edit_btn"
+                tools:tint="@color/bg_color" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

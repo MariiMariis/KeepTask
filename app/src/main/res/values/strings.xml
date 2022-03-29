@@ -42,6 +42,9 @@
     <string name="radio_btn_todo">A fazer</string>
     <string name="radio_btn_doing">Fazendo</string>
     <string name="radio_btn_done">Feito</string>
+    <string name="btn_remover">Remover</string>
+    <string name="btn_editar">Editar</string>
+    <string name="btn_detalhes">Detalhes</string>
 
 
 </resources>
