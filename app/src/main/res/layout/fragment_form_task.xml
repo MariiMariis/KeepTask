@@ -68,6 +68,7 @@
                 android:textSize="14sp"
                 android:padding="14dp"
                 android:textColor="@color/bg_color"
+                android:imeOptions="actionDone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_nova_tarefa"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -97,6 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:textColor="@color/white"
                     android:buttonTint="@color/white"
                     android:text="@string/radio_btn_todo"/>
