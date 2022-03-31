@@ -1,8 +1,6 @@
 package br.infnet.dev.keeptask.ui.auth
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +9,14 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentRegisterBinding
+import br.infnet.dev.keeptask.helper.BaseFragment
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : BaseFragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
@@ -26,7 +25,7 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -52,11 +51,11 @@ class RegisterFragment : Fragment() {
         if(email.isNotEmpty()){
             if(password.isNotEmpty()){
 
+                hideKeyboard()
+
                 binding.progressBar.isVisible = true
 
                 registerUser(email, password)
-
-
 
             } else{
                 Toast.makeText(requireContext(), "Por favor, insira uma senha", Toast.LENGTH_SHORT).show()

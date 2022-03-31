@@ -12,6 +12,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentTodoBinding
+import br.infnet.dev.keeptask.helper.BaseFragment
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import br.infnet.dev.keeptask.model.Task
 import br.infnet.dev.keeptask.ui.adapter.TaskAdapter
@@ -20,7 +21,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
 
-class TodoFragment : Fragment() {
+class TodoFragment : BaseFragment() {
 
 
 
@@ -33,7 +34,7 @@ class TodoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTodoBinding.inflate(inflater,container, false)
         return binding.root
     }
@@ -127,7 +128,7 @@ class TodoFragment : Fragment() {
             .child(FirebaseHelper.getUserId() ?: "")
             .child(task.id)
             .setValue(task)
-            .addOnCompleteListener{task ->
+            .addOnCompleteListener{ task ->
                 if(task.isSuccessful){
                     binding.progressBar.isVisible = false
                     Toast.makeText(

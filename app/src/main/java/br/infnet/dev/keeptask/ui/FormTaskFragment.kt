@@ -1,7 +1,6 @@
 package br.infnet.dev.keeptask.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentFormTaskBinding
+import br.infnet.dev.keeptask.helper.BaseFragment
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import br.infnet.dev.keeptask.model.Task
 
-class FormTaskFragment : Fragment() {
+class FormTaskFragment : BaseFragment() {
 
     private val args: FormTaskFragmentArgs by navArgs()
 
@@ -29,7 +29,7 @@ class FormTaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFormTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -93,6 +93,8 @@ class FormTaskFragment : Fragment() {
         val description = binding.edtNovaTarefa.text.toString().trim()
 
         if(description.isNotEmpty()){
+
+            hideKeyboard()
 
             binding.progressBar.isVisible = true
 

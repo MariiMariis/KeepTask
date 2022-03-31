@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentDoneBinding
+import br.infnet.dev.keeptask.helper.BaseFragment
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import br.infnet.dev.keeptask.model.Task
 import br.infnet.dev.keeptask.ui.adapter.TaskAdapter
@@ -18,9 +19,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
-class DoneFragment : Fragment() {
+class DoneFragment : BaseFragment() {
 
-    private var _binding: FragmentDoneBinding? =null
+    private var _binding: FragmentDoneBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var taskAdapter: TaskAdapter
@@ -29,8 +30,8 @@ class DoneFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentDoneBinding.inflate(inflater, container, true)
+    ): View {
+        _binding = FragmentDoneBinding.inflate(inflater, container, false)
         return binding.root
     }
 

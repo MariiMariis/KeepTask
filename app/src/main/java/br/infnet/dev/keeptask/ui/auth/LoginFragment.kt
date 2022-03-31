@@ -1,8 +1,6 @@
 package br.infnet.dev.keeptask.ui.auth
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +9,13 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentLoginBinding
+import br.infnet.dev.keeptask.helper.BaseFragment
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
@@ -26,7 +25,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -61,6 +60,8 @@ class LoginFragment : Fragment() {
 
         if(email.isNotEmpty()){
             if(password.isNotEmpty()){
+
+                hideKeyboard()
 
                 binding.progressBar.isVisible = true
 
