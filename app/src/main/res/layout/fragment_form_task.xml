@@ -22,6 +22,7 @@
             android:background="@color/bg_color">
 
             <TextView
+                android:id="@+id/textToolBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -69,6 +70,7 @@
                 android:padding="14dp"
                 android:textColor="@color/bg_color"
                 android:imeOptions="actionDone"
+                android:inputType="text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_nova_tarefa"
                 app:layout_constraintEnd_toEndOf="parent" />

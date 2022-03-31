@@ -22,7 +22,7 @@
     <string name="text_recover_account">"Insira o e-mail cadastrado "</string>
     <string name="recover_account_email_hint">email@email.com</string>
     <string name="btn_send_email_text">Enviar email</string>
-    <string name="task_carregando_tarefas_text">Carregando tarefas...</string>
+    <string name="task_carregando_tarefas_text">Carregando tarefas</string>
     <string name="adicionar_tarefa_description">Adicionar tarefa</string>
 
     <!--    Validation Errors - Auth-->
@@ -45,6 +45,17 @@
     <string name="btn_remover">Remover</string>
     <string name="btn_editar">Editar</string>
     <string name="btn_detalhes">Detalhes</string>
+    <string name="edit_task">Editar tarefa</string>
+
+
+    <!--  TO DO TASK  /-->
+    <string name="no_task_registered_todo">Nenhuma tarefa cadastrada</string>
+
+    <!-- DOING TASK  /-->
+    <string name="no_task_registered_doing">Nenhuma tarefa cadastrada</string>
+
+    <!--  DONE TASK  /-->
+    <string name="no_task_registered_done">Nenhuma tarefa cadastrada</string>
 
 
 </resources>

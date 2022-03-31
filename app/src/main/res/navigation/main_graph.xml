@@ -69,5 +69,10 @@
         android:id="@+id/formTaskFragment"
         android:name="br.infnet.dev.keeptask.ui.FormTaskFragment"
         android:label="fragment_form_task"
-        tools:layout="@layout/fragment_form_task" />
+        tools:layout="@layout/fragment_form_task" >
+        <argument
+            android:name="task"
+            app:argType="br.infnet.dev.keeptask.model.Task"
+            app:nullable="true" />
+    </fragment>
 </navigation>

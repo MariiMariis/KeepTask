@@ -8,12 +8,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentFormTaskBinding
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import br.infnet.dev.keeptask.model.Task
 
 class FormTaskFragment : Fragment() {
+
+    private val args: FormTaskFragmentArgs by navArgs()
 
     private var _binding: FragmentFormTaskBinding? = null
     private val binding get() = _binding!!
@@ -35,6 +38,41 @@ class FormTaskFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initListeners()
+        getArgs()
+    }
+    private fun getArgs() {
+        args.task.let {
+            if(it != null) {
+                task = it
+                configTask()
+            }
+        }
+    }
+
+    private fun configTask(){
+        newTask = false
+        statusTask = task.status
+        binding.textToolBar.text = getText(R.string.edit_task)
+
+        binding.edtNovaTarefa.setText(task.description)
+
+        setStatus()
+    }
+
+    private fun setStatus(){
+        binding.radioGroupNewtask.check(
+            when(task.status) {
+                0 -> {
+                    R.id.radio_btn_todo
+                }
+                1 -> {
+                    R.id.radio_btn_doing
+                }
+                else -> {
+                    R.id.radio_btn_done
+                }
+            }
+        )
     }
 
     private fun initListeners() {
@@ -73,7 +111,8 @@ class FormTaskFragment : Fragment() {
         FirebaseHelper
             .getDatabase()
             .child("task")
-            .child(FirebaseHelper.getUserId() ?: "").child(task.id)
+            .child(FirebaseHelper.getUserId() ?: "")
+            .child(task.id)
             .setValue(task)
             .addOnCompleteListener{task ->
                 if(task.isSuccessful){

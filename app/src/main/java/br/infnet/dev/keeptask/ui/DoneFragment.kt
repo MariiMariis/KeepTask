@@ -43,7 +43,9 @@ class DoneFragment : Fragment() {
 
     private fun initClicks() {
         binding.fabAdd.setOnClickListener{
-            findNavController().navigate(R.id.action_homeFragment_to_formTaskFragment)
+            val action = HomeFragmentDirections
+                .actionHomeFragmentToFormTaskFragment(null)
+            findNavController().navigate(action)
 
         }
     }
@@ -65,14 +67,11 @@ class DoneFragment : Fragment() {
                             if(task.status == 2) taskList.add(task)
                         }
 
-                        binding.textInfo.text = ""
                         taskList.reverse()
                         initAdapter()
 
-                    }else{
-                        binding.textInfo.text = "Nenhuma tarefa cadastrada"
-
                     }
+                    emptyTasks()
                     binding.progressBar.isVisible = false
                 }
 
@@ -81,6 +80,14 @@ class DoneFragment : Fragment() {
                 }
 
             })
+    }
+
+    private fun emptyTasks() {
+        binding.textInfo.text = if(taskList.isEmpty()){
+            getText(R.string.no_task_registered_done)
+        }else{
+            ""
+        }
     }
 
     private fun initAdapter() {
@@ -97,7 +104,45 @@ class DoneFragment : Fragment() {
             TaskAdapter.SELECT_REMOVE -> {
                 deleteTask(task)
             }
+            TaskAdapter.SELECT_EDIT -> {
+                val action = HomeFragmentDirections
+                    .actionHomeFragmentToFormTaskFragment(task)
+                findNavController().navigate(action)
+            }
+            TaskAdapter.SELECT_BACK -> {
+                task.status = 1
+                updateTask(task)
+            }
         }
+    }
+
+    private fun updateTask(task: Task){
+        FirebaseHelper
+            .getDatabase()
+            .child("task")
+            .child(FirebaseHelper.getUserId() ?: "")
+            .child(task.id)
+            .setValue(task)
+            .addOnCompleteListener{ task ->
+                if(task.isSuccessful){
+                    binding.progressBar.isVisible = false
+                    Toast.makeText(
+                        requireContext(),
+                        "Tarefa atualizada com sucesso!.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                } else {
+                    Toast.makeText(requireContext(), "Erro ao salvar tarefa.", Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+            }.addOnFailureListener{
+                binding.progressBar.isVisible = false
+                Toast.makeText(requireContext(), "Erro ao salvar a tarefa", Toast.LENGTH_SHORT).show()
+
+
+            }
     }
 
     private fun deleteTask(task:Task) {

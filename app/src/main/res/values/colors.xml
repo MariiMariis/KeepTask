@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="bg_color">#AA1FFF</color>
+    <color name="bg_colorsecondary">#630F97</color>
     <color name="hint_gray">#8C868F</color>
     <color name="text_gray">#656167</color>
 
