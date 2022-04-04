@@ -5,30 +5,41 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import br.infnet.dev.keeptask.R
 import br.infnet.dev.keeptask.databinding.FragmentHomeBinding
-import br.infnet.dev.keeptask.databinding.FragmentLoginBinding
 import br.infnet.dev.keeptask.ui.adapter.ViewPagerAdapter
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 class HomeFragment : Fragment() {
+
+    lateinit var mAdView :AdView
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        MobileAds.initialize(this@HomeFragment.requireContext()) {}
+
+        mAdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -71,6 +82,7 @@ class HomeFragment : Fragment() {
             )
         }.attach()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

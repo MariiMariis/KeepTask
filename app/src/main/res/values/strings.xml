@@ -57,5 +57,10 @@
     <!--  DONE TASK  /-->
     <string name="no_task_registered_done">Nenhuma tarefa cadastrada</string>
 
+    <!--  ADMOB  /-->
+    <string name="ID_BANNER">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ID_Interstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ID_InterstitialVideo">ca-app-pub-3940256099942544/8691691433</string>
+    <string name="btn_de_logout">Botão de logout</string>
 
 </resources>
