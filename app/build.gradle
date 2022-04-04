@@ -63,4 +63,7 @@ dependencies {
 
     //Realtime Database
     implementation 'com.google.firebase:firebase-database'
+
+    //AdMob
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
 }
