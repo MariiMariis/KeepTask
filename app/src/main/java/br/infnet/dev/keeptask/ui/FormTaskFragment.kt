@@ -146,42 +146,6 @@ class FormTaskFragment : BaseFragment() {
             }
     }
 
-    private val requestMultiplePermissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
-        resultsMap ->
-        var permissionGranted = false
-        resultsMap.forEach {
-            if(it.value == true) {
-                permissionGranted = it.value
-            } else {
-                permissionGranted = false
-                return@forEach
-            }
-        }
-        if(permissionGranted) {
-            invokeCamera()
-        } else {
-            Toast.makeText(requireContext(), "Não é possivel abrir a câmera sem que a permissão seja concedida", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun takePhoto() {
-        if (hasCameraPermission() == PERMISSION_GRANTED && hasExternalStoragePermission() == PERMISSION_GRANTED) {
-            invokeCamera()
-        } else {
-            requestMultiplePermissionsLauncher.launch(arrayOf(
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA
-            ))
-        }
-    }
-
-    private fun invokeCamera() {
-
-    }
-
-    fun hasCameraPermission() = ContextCompat.checkSelfPermission(this.requireContext(), Manifest.permission.CAMERA)
-    fun hasExternalStoragePermission() = ContextCompat.checkSelfPermission(this.requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
