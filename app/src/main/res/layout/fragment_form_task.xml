@@ -75,6 +75,34 @@
                 app:layout_constraintTop_toBottomOf="@id/text_nova_tarefa"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_image"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/adc_imagem"
+                app:layout_constraintTop_toBottomOf="@id/edt_nova_tarefa"
+                app:layout_constraintBottom_toTopOf="@+id/text_status" />
+
+            <Button
+                android:id="@+id/adc_imagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_button"
+                app:backgroundTint="@null"
+                android:text="@string/adicionar_imagem"
+                android:textAllCaps="true"
+                android:textColor="@color/bg_color"
+
+                app:layout_constraintStart_toEndOf="@id/image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_nova_tarefa"
+                app:layout_constraintBottom_toTopOf="@+id/text_status" />
+
+
             <TextView
                 android:id="@+id/text_status"
                 android:layout_width="wrap_content"
@@ -83,7 +111,9 @@
                 android:textColor="@color/white"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edt_nova_tarefa" />
+                app:layout_constraintTop_toBottomOf="@id/image_view"
+                app:layout_constraintBottom_toTopOf="@id/radio_group_newtask"
+                />
 
             <RadioGroup
                 android:id="@+id/radio_group_newtask"

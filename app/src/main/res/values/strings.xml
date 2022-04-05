@@ -62,5 +62,6 @@
     <string name="ID_Interstitial">ca-app-pub-3940256099942544/1033173712</string>
     <string name="ID_InterstitialVideo">ca-app-pub-3940256099942544/8691691433</string>
     <string name="btn_de_logout">Botão de logout</string>
+    <string name="adicionar_imagem">Adicionar Imagem</string>
 
 </resources>

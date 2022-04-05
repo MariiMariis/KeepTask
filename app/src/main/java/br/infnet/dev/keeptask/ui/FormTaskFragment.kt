@@ -1,6 +1,8 @@
 package br.infnet.dev.keeptask.ui
 
+
 import android.os.Bundle
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +16,7 @@ import br.infnet.dev.keeptask.helper.BaseFragment
 import br.infnet.dev.keeptask.helper.FirebaseHelper
 import br.infnet.dev.keeptask.model.Task
 
+
 class FormTaskFragment : BaseFragment() {
 
     private val args: FormTaskFragmentArgs by navArgs()
@@ -26,12 +29,15 @@ class FormTaskFragment : BaseFragment() {
 
     private var statusTask: Int = 0
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFormTaskBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
