@@ -1,12 +1,16 @@
 package br.infnet.dev.keeptask.ui
 
 
+import android.Manifest
 import android.os.Bundle
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
+import androidx.core.content.PermissionChecker.PERMISSION_GRANTED
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -36,7 +40,6 @@ class FormTaskFragment : BaseFragment() {
     ): View {
         _binding = FragmentFormTaskBinding.inflate(inflater, container, false)
         return binding.root
-
 
     }
 
@@ -142,6 +145,42 @@ class FormTaskFragment : BaseFragment() {
 
             }
     }
+
+    private val requestMultiplePermissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+        resultsMap ->
+        var permissionGranted = false
+        resultsMap.forEach {
+            if(it.value == true) {
+                permissionGranted = it.value
+            } else {
+                permissionGranted = false
+                return@forEach
+            }
+        }
+        if(permissionGranted) {
+            invokeCamera()
+        } else {
+            Toast.makeText(requireContext(), "Não é possivel abrir a câmera sem que a permissão seja concedida", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun takePhoto() {
+        if (hasCameraPermission() == PERMISSION_GRANTED && hasExternalStoragePermission() == PERMISSION_GRANTED) {
+            invokeCamera()
+        } else {
+            requestMultiplePermissionsLauncher.launch(arrayOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA
+            ))
+        }
+    }
+
+    private fun invokeCamera() {
+
+    }
+
+    fun hasCameraPermission() = ContextCompat.checkSelfPermission(this.requireContext(), Manifest.permission.CAMERA)
+    fun hasExternalStoragePermission() = ContextCompat.checkSelfPermission(this.requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
 
     override fun onDestroyView() {
         super.onDestroyView()
