@@ -60,6 +60,39 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" >
     </androidx.viewpager2.widget.ViewPager2>
 
+    <LinearLayout
+        android:id="@+id/api_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPager">
+
+        <ProgressBar
+            android:id="@+id/progbar_api"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            tools:text="Exemplo de texto"
+            />
+
+
+
+    </LinearLayout>
+
+
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -67,7 +100,7 @@
         ads:adUnitId="@string/ID_BANNER"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/viewPager"
+        app:layout_constraintTop_toBottomOf="@+id/api_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintBottom_toBottomOf="parent"

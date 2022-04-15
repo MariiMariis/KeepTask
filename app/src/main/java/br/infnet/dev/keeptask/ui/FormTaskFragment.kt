@@ -8,9 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
-import androidx.core.content.PermissionChecker.PERMISSION_GRANTED
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -23,7 +20,7 @@ import br.infnet.dev.keeptask.model.Task
 
 class FormTaskFragment : BaseFragment() {
 
-    private val args: FormTaskFragmentArgs by navArgs()
+    private val args: FormTaskFragment by navArgs()
 
     private var _binding: FragmentFormTaskBinding? = null
     private val binding get() = _binding!!
@@ -32,7 +29,6 @@ class FormTaskFragment : BaseFragment() {
     private var newTask: Boolean = true
 
     private var statusTask: Int = 0
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,6 +45,7 @@ class FormTaskFragment : BaseFragment() {
         initListeners()
         getArgs()
     }
+
     private fun getArgs() {
         args.task.let {
             if(it != null) {
